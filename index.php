@@ -10,7 +10,7 @@ if ($_GET['secret'] != $secret) {
 }
 
 // default to Singapore if there's no country code
-$country = !empty($_GET['country']) ? $_GET['country'] : 'sg';
+$country = !empty($_GET['country']) ? strtolower($_GET['country']) : 'sg';
 
 $url 		 = 'https://slack.com/api/users.profile.set';
 $status  = microtime();
