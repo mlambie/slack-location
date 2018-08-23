@@ -1,8 +1,13 @@
 <?php
 
 // https://api.slack.com/custom-integrations/legacy-tokens
-// defines a $token variable
-require('token.php');
+// defines Slack $token and $secret variables
+require('secrets.php');
+
+// ?secret=<secret>&country=AU
+if ($_GET['secret'] != $secret) {
+	die("Not today buster!");
+}
 
 // default to Singapore if there's no country code
 $country = !empty($_GET['country']) ? $_GET['country'] : 'sg';
