@@ -11,7 +11,7 @@ if ($_GET['secret'] != $secret) {
 
 // default to Singapore if there's no country code
 $country = !empty($_GET['country']) ? strtolower($_GET['country']) : 'sg';
-$status  = !empty($_GET['status']) ? $_GET(['status']) : '';
+$status  = !empty($_GET['status']) ? $_GET['status'] : '';
 
 $url 		 = 'https://slack.com/api/users.profile.set';
 $emoji 	 = ":flag-$country:";
