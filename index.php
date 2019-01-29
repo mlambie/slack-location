@@ -13,7 +13,7 @@ if ($_GET['secret'] != $secret) {
 $country = !empty($_GET['country']) ? strtolower($_GET['country']) : 'sg';
 $status  = !empty($_GET['status']) ? $_GET['status'] : '';
 
-$url 		 = 'https://slack.com/api/users.profile.set';
+$url     = 'https://slack.com/api/users.profile.set';
 $emoji 	 = ":flag-$country:";
 $profile = urlencode(json_encode(array("status_text" => $status, "status_emoji" => $emoji)));
 $payload = "token=$token&profile=$profile";
